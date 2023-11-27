@@ -1,0 +1,3 @@
+file:src/test/resources/Features/TC2_Amazon.feature:13
+file:src/test/resources/Features/TC3_Flipkart.feature:13
+file:src/test/resources/Features/TC1_DemoQA.feature:10

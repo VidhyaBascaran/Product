@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>OMRBranch Hotel Automation</td>
+      <td>27 Nov 2023, 18:53</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.stepdefinition.HooksClass.afterScenario(io.cucumber.java.Scenario)</td>
+              <td>3</td>
+              <td class="duration" data-value="245249800">0.245</td>
+              <td class="duration" data-value="245249800">0.330</td>
+              <td class="duration" data-value="735749400">0.735</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.HooksClass.beforeScenario(io.cucumber.java.Scenario)</td>
+              <td>3</td>
+              <td class="duration" data-value="5649755333">5.649</td>
+              <td class="duration" data-value="5649755333">12.343</td>
+              <td class="duration" data-value="16949266000">16.949</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_DemoQA.user_enters_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="6775359700">6.775</td>
+              <td class="duration" data-value="6775359700">6.775</td>
+              <td class="duration" data-value="6775359700">6.775</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_DemoQA.user_is_on_demo_qa_register_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="9980000">0.009</td>
+              <td class="duration" data-value="9980000">0.009</td>
+              <td class="duration" data-value="9980000">0.009</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_DemoQA.user_should_verify_success_message_after_register(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="30293800">0.030</td>
+              <td class="duration" data-value="30293800">0.030</td>
+              <td class="duration" data-value="30293800">0.030</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_Amazon.user_add_the_product_to_cart()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_Amazon.user_enters(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="5960026400">5.960</td>
+              <td class="duration" data-value="5960026400">5.960</td>
+              <td class="duration" data-value="5960026400">5.960</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_Amazon.user_is_on_amazon_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="997200">0.000</td>
+              <td class="duration" data-value="997200">0.000</td>
+              <td class="duration" data-value="997200">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_Amazon.user_select_the_product()</td>
+              <td>1</td>
+              <td class="duration" data-value="60062845500">1:0.062</td>
+              <td class="duration" data-value="60062845500">1:0.062</td>
+              <td class="duration" data-value="60062845500">1:0.062</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_Amazon.user_should_verify_the_sucess_message_after_product_added(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_Amazon.user_verify_success_message_after_search_product(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="60992100">0.060</td>
+              <td class="duration" data-value="60992100">0.060</td>
+              <td class="duration" data-value="60992100">0.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_Flipkart.user_add_the_product_in_the_cart()</td>
+              <td>1</td>
+              <td class="duration" data-value="3112121800">3.112</td>
+              <td class="duration" data-value="3112121800">3.112</td>
+              <td class="duration" data-value="3112121800">3.112</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_Flipkart.user_enter(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="5209732700">5.209</td>
+              <td class="duration" data-value="5209732700">5.209</td>
+              <td class="duration" data-value="5209732700">5.209</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_Flipkart.user_is_on_flipkart_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="1002700">0.001</td>
+              <td class="duration" data-value="1002700">0.001</td>
+              <td class="duration" data-value="1002700">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_Flipkart.user_select_product()</td>
+              <td>1</td>
+              <td class="duration" data-value="3137032100">3.137</td>
+              <td class="duration" data-value="3137032100">3.137</td>
+              <td class="duration" data-value="3137032100">3.137</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_Flipkart.user_should_verify_the_success_message_after_search_product(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="51478800">0.051</td>
+              <td class="duration" data-value="51478800">0.051</td>
+              <td class="duration" data-value="51478800">0.051</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_Flipkart.user_should_verify_the_sucess_message_after_added_product(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="48184500">0.048</td>
+              <td class="duration" data-value="48184500">0.048</td>
+              <td class="duration" data-value="48184500">0.048</td>
+              <td class="failed">0.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>17</td>
+            <td>21</td>
+            <td class="duration">4.864</td>
+            <td class="duration">1:0.062</td>
+            <td class="duration">1:42.145</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
